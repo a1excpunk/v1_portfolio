@@ -43,21 +43,42 @@ body header .header_content {
 body header .header_content .top_menu_wrapper ul {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 40px;
 }
 body header .header_content .top_menu_wrapper ul li {
-  width: 100px;
-  text-align: end;
+  border-bottom: 1px solid transparent;
+  position: relative;
+  padding: 5px 10px;
 }
-body header .header_content .top_menu_wrapper ul li:hover {
-  transition: letter-spacing 500ms linear;
-  letter-spacing: 2px;
-}
-body header .header_content .top_menu_wrapper ul li:hover::first-letter {
+body header .header_content .top_menu_wrapper ul li::first-letter {
   color: #f1c50e;
 }
-body header .header_content .top_menu_wrapper ul li:active {
-  color: #f1c50e;
+body header .header_content .top_menu_wrapper ul li::before, body header .header_content .top_menu_wrapper ul li::after {
+  content: "";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 400ms;
+}
+body header .header_content .top_menu_wrapper ul li::before {
+  border: 1px solid rgba(241, 196, 14, 0.5607843137);
+  bottom: 3px;
+  left: 3px;
+}
+body header .header_content .top_menu_wrapper ul li::after {
+  border: 1px solid #f1c40e;
+  box-shadow: 3px -3px 5px rgba(241, 196, 14, 0.3098039216), inset 3px -3px 5px rgba(241, 196, 14, 0.3098039216);
+  top: 3px;
+  right: 3px;
+}
+body header .header_content .top_menu_wrapper ul li:hover::before {
+  transform: translate(-3px, 3px);
+}
+body header .header_content .top_menu_wrapper ul li:hover::after {
+  transform: translate(3px, -3px);
 }
 @media (max-width: 700px) {
   body header .header_content .top_menu_wrapper {
@@ -178,6 +199,11 @@ body .side_menu_wrapper img {
   right: 20px;
   cursor: pointer;
 }
+@media (max-width: 600px) {
+  body .side_menu_wrapper img {
+    width: 20px;
+  }
+}
 body .side_menu_wrapper ul {
   display: flex;
   flex-direction: column;
@@ -188,6 +214,9 @@ body .side_menu_wrapper ul {
 @media (max-width: 600px) {
   body .side_menu_wrapper ul {
     justify-content: center;
+  }
+  body .side_menu_wrapper ul li {
+    font-size: 1.5rem;
   }
 }
 body .side_menu_wrapper ul a {
@@ -206,4 +235,27 @@ body .modal {
   top: 0;
   z-index: 2;
   display: none;
+}
+
+@keyframes fillBorder {
+  100% {
+    width: 100%;
+  }
+}
+@keyframes border_fill {
+  0% {
+    border-bottom-color: #f1c50e;
+    width: 100%;
+  }
+  25% {
+    border-right-color: #f1c50e;
+  }
+  75% {
+    border-top-color: #f1c50e;
+    width: 100%;
+  }
+  100% {
+    border-color: #f1c50e;
+    width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */
