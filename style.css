@@ -105,6 +105,108 @@ body header .header_content .burger_menu {
     margin-bottom: 5px;
   }
 }
+body header .on_scroll_header {
+  position: fixed;
+  margin-top: 50svh;
+  right: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  transform: rotate(45deg);
+  animation: rotateScrollMenu 500ms;
+}
+body header .on_scroll_header li {
+  transform: rotate(-45deg);
+  position: relative;
+  display: flex;
+  padding: 10px 15px;
+  border-radius: 50%;
+  background-color: #000000;
+  cursor: pointer;
+  color: #f1c40e;
+  transition: border-radius 500ms;
+}
+body header .on_scroll_header li:hover:nth-child(1) {
+  border-radius: 5px;
+}
+body header .on_scroll_header li:hover:nth-child(1)::after {
+  position: absolute;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 5px;
+  color: black;
+  top: -35px;
+  background-color: #f1c40e;
+  font-size: 12px;
+  border-radius: 5px;
+  right: 0;
+}
+body header .on_scroll_header li:hover:nth-child(2) {
+  border-radius: 5px;
+}
+body header .on_scroll_header li:hover:nth-child(2)::after {
+  position: absolute;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 5px;
+  color: black;
+  top: -35px;
+  background-color: #f1c40e;
+  font-size: 12px;
+  border-radius: 5px;
+  right: 0;
+}
+body header .on_scroll_header li:hover:nth-child(3) {
+  border-radius: 5px;
+}
+body header .on_scroll_header li:hover:nth-child(3)::after {
+  position: absolute;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 5px;
+  color: black;
+  top: -35px;
+  background-color: #f1c40e;
+  font-size: 12px;
+  border-radius: 5px;
+  right: 0;
+}
+body header .on_scroll_header li:hover:nth-child(4) {
+  border-radius: 5px;
+}
+body header .on_scroll_header li:hover:nth-child(4)::after {
+  position: absolute;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 5px;
+  color: black;
+  top: -35px;
+  background-color: #f1c40e;
+  font-size: 12px;
+  border-radius: 5px;
+  right: 0;
+}
+body header .on_scroll_header li:hover:nth-child(1)::after {
+  content: "Home";
+}
+body header .on_scroll_header li:hover:nth-child(2)::after {
+  content: "Skills";
+}
+body header .on_scroll_header li:hover:nth-child(3)::after {
+  content: "Portfolio";
+}
+body header .on_scroll_header li:hover:nth-child(4)::after {
+  content: "About";
+}
+@keyframes rotateScrollMenu {
+  0% {
+    transform: rotate(-45deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 body main {
   display: flex;
   flex-direction: column;
