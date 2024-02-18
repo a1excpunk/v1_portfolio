@@ -27,11 +27,9 @@ body li {
   list-style-type: none;
 }
 body header {
+  background-color: rgba(17, 17, 17, 0.3764705882);
   margin: auto;
-  position: fixed;
-  background-color: rgba(17, 17, 17, 0.9333333333);
   width: 100%;
-  top: 0;
 }
 body header .header_content {
   max-width: 1440px;
@@ -115,7 +113,7 @@ body main {
   margin: auto;
 }
 body main .hero_wrapper {
-  margin-top: 100px;
+  margin-top: 50px;
   min-height: 600px;
   display: flex;
 }
