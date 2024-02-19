@@ -14,11 +14,54 @@ burger_menu.addEventListener("click", () => {
 side_menu_close.addEventListener("click", closeSideBar);
 modal.addEventListener("click", closeSideBar);
 
+let test = 0;
+let test1 = 0;
+let test2 = 0;
+let test3 = 0;
+let test4 = 0;
+let lastScrollTop = 0;
 window.addEventListener("scroll", () => {
-  if (document.documentElement.scrollTop > 100) {
+  let st = document.documentElement.scrollTop;
+  if (st > 100) {
     document.querySelector(".on_scroll_header").style.display = "grid";
   }
-  if (document.documentElement.scrollTop === 0) {
+  if (st === 0) {
     document.querySelector(".on_scroll_header").style.display = "none";
   }
+  if (st > lastScrollTop) {
+    // downscroll code
+    document.querySelector(
+      ".on_scroll_header"
+    ).style.transform = `rotate(${(test += 5)}deg)`;
+    document.querySelectorAll(
+      ".on_scroll_header_element"
+    )[0].style.transform = `rotate(${(test1 -= 5)}deg)`;
+    document.querySelectorAll(
+      ".on_scroll_header_element"
+    )[1].style.transform = `rotate(${(test2 -= 5)}deg)`;
+    document.querySelectorAll(
+      ".on_scroll_header_element"
+    )[2].style.transform = `rotate(${(test3 -= 5)}deg)`;
+    document.querySelectorAll(
+      ".on_scroll_header_element"
+    )[3].style.transform = `rotate(${(test4 -= 5)}deg)`;
+  } else if (st < lastScrollTop) {
+    // upscroll code
+    document.querySelector(
+      ".on_scroll_header"
+    ).style.transform = `rotate(${(test -= 5)}deg)`;
+    document.querySelectorAll(
+      ".on_scroll_header_element"
+    )[0].style.transform = `rotate(${(test1 += 5)}deg)`;
+    document.querySelectorAll(
+      ".on_scroll_header_element"
+    )[1].style.transform = `rotate(${(test2 += 5)}deg)`;
+    document.querySelectorAll(
+      ".on_scroll_header_element"
+    )[2].style.transform = `rotate(${(test3 += 5)}deg)`;
+    document.querySelectorAll(
+      ".on_scroll_header_element"
+    )[3].style.transform = `rotate(${(test4 += 5)}deg)`;
+  }
+  lastScrollTop = st <= 0 ? 0 : st;
 });
