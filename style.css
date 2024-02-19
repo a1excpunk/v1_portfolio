@@ -238,19 +238,19 @@ body .on_scroll_header a:hover:nth-child(4)::after {
   }
 }
 
-main {
+#home {
   display: flex;
   flex-direction: column;
   justify-content: center;
   max-width: 1440px;
   margin: auto;
 }
-main .hero_wrapper {
+#home .hero_wrapper {
   min-height: 600px;
   display: flex;
   position: relative;
 }
-main .hero_wrapper .hero_text_wrapper {
+#home .hero_wrapper .hero_text_wrapper {
   flex: 1;
   background-color: #111111;
   padding: 30px 50px;
@@ -258,50 +258,50 @@ main .hero_wrapper .hero_text_wrapper {
   align-items: center;
   justify-content: center;
 }
-main .hero_wrapper .hero_text_wrapper .hero_text_content {
+#home .hero_wrapper .hero_text_wrapper .hero_text_content {
   position: relative;
   z-index: 2;
   max-width: 630px;
 }
-main .hero_wrapper .hero_text_wrapper .hero_text_content h1 {
+#home .hero_wrapper .hero_text_wrapper .hero_text_content h1 {
   font-size: 2.5rem;
   font-weight: 400;
 }
-main .hero_wrapper .hero_text_wrapper .hero_text_content h2 {
+#home .hero_wrapper .hero_text_wrapper .hero_text_content h2 {
   margin: 35px 0;
   font-weight: 300;
   font-size: 1.875rem;
   color: #c0c0c0;
 }
-main .hero_wrapper .hero_text_wrapper .hero_text_content .social_links a {
+#home .hero_wrapper .hero_text_wrapper .hero_text_content .social_links a {
   line-height: 40px;
   display: block;
   font-size: 1.125rem;
 }
-main .hero_wrapper .hero_text_wrapper .hero_text_content .social_links a:hover {
+#home .hero_wrapper .hero_text_wrapper .hero_text_content .social_links a:hover {
   color: #f1c50e;
 }
-main .hero_wrapper .hero_img {
+#home .hero_wrapper .hero_img {
   flex: 1;
 }
-main .hero_wrapper .hero_img path {
+#home .hero_wrapper .hero_img path {
   opacity: 0.5;
 }
-main .hero_wrapper .hero_img path:hover {
+#home .hero_wrapper .hero_img path:hover {
   cursor: pointer;
   opacity: 1;
 }
-main .hero_wrapper .hero_img path:active {
+#home .hero_wrapper .hero_img path:active {
   stroke-width: 15px;
   opacity: 0.3;
 }
 @media (max-width: 700px) {
-  main .hero_wrapper {
+  #home .hero_wrapper {
     margin-top: 80px;
     background-color: #111111;
     flex-direction: column;
   }
-  main .hero_wrapper .hero_img {
+  #home .hero_wrapper .hero_img {
     display: none;
   }
 }
