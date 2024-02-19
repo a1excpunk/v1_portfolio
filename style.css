@@ -84,6 +84,12 @@ body header .burger_menu {
   display: none;
 }
 @media (max-width: 700px) {
+  body header {
+    position: fixed;
+    opacity: 1;
+    z-index: 3;
+    background-color: black;
+  }
   body header .burger_menu {
     display: block;
   }
@@ -226,6 +232,11 @@ body .on_scroll_header a:hover:nth-child(3)::after {
 body .on_scroll_header a:hover:nth-child(4)::after {
   content: "About";
 }
+@media (max-width: 700px) {
+  body .on_scroll_header {
+    opacity: 0;
+  }
+}
 
 main {
   display: flex;
@@ -286,12 +297,12 @@ main .hero_wrapper .hero_img path:active {
 }
 @media (max-width: 700px) {
   main .hero_wrapper {
+    margin-top: 80px;
     background-color: #111111;
     flex-direction: column;
   }
   main .hero_wrapper .hero_img {
-    height: 500px;
-    flex: none;
+    display: none;
   }
 }
 
