@@ -364,25 +364,8 @@ main .hero_wrapper .hero_img path:active {
   display: none;
 }
 
-@keyframes fillBorder {
+@keyframes fillBG {
   100% {
-    width: 100%;
-  }
-}
-@keyframes border_fill {
-  0% {
-    border-bottom-color: #f1c50e;
-    width: 100%;
-  }
-  25% {
-    border-right-color: #f1c50e;
-  }
-  75% {
-    border-top-color: #f1c50e;
-    width: 100%;
-  }
-  100% {
-    border-color: #f1c50e;
     width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */
