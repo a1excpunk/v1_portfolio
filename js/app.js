@@ -29,7 +29,7 @@ window.addEventListener("scroll", () => {
     document.querySelector(".on_scroll_header").style.display = "none";
   }
   if (st > lastScrollTop) {
-    // downscroll code
+    // downscroll
     document.querySelector(
       ".on_scroll_header"
     ).style.transform = `rotate(${(test += 5)}deg)`;
@@ -46,7 +46,7 @@ window.addEventListener("scroll", () => {
       ".on_scroll_header_element"
     )[3].style.transform = `rotate(${(test4 -= 5)}deg)`;
   } else if (st < lastScrollTop) {
-    // upscroll code
+    // upscroll
     document.querySelector(
       ".on_scroll_header"
     ).style.transform = `rotate(${(test -= 5)}deg)`;
