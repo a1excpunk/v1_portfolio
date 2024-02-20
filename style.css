@@ -6,7 +6,7 @@
 @property --gradient-black-2 {
   syntax: "<color>";
   inherits: true;
-  initial-value: rgb(34, 34, 34);
+  initial-value: rgb(30, 30, 30);
 }
 * {
   padding: 0;
@@ -263,10 +263,11 @@ body #home {
   margin: auto;
   position: relative;
   min-height: 600px;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
+  margin-top: 50px;
 }
 body #home .hero_wrapper {
-  box-shadow: 4px 4px 8px rgba(255, 255, 255, 0.1), -4px -4px 10px rgba(0, 0, 0, 0.8);
+  box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.1), -4px -4px 15px rgba(0, 0, 0, 0.7);
   position: absolute;
   display: flex;
   width: 100%;
@@ -274,10 +275,11 @@ body #home .hero_wrapper {
   z-index: -1;
   border-radius: 15px;
   background: linear-gradient(45deg, var(--gradient-black-1), var(--gradient-black-2));
-  transition: --gradient-black-1 700ms, --gradient-black-2 700ms;
+  transition: --gradient-black-1 700ms, --gradient-black-2 1000ms, box-shadow 1300ms;
 }
 body #home:hover .hero_wrapper {
-  --gradient-black-1: rgb(34, 34, 34);
+  box-shadow: 4px -4px 15px rgba(0, 0, 0, 0.7), -4px 4px 10px rgba(255, 255, 255, 0.1);
+  --gradient-black-1: rgb(30, 30, 30);
   --gradient-black-2: rgb(0, 0, 0);
 }
 body #home .hero_text_wrapper {
@@ -302,19 +304,38 @@ body #home .hero_text_wrapper .hero_text_content h2 {
   font-size: 1.875rem;
   color: #c0c0c0;
 }
+body #home .hero_text_wrapper .hero_text_content .social_links {
+  display: flex;
+  flex-direction: column;
+  width: -moz-max-content;
+  width: max-content;
+  gap: 10px;
+}
 body #home .hero_text_wrapper .hero_text_content .social_links a {
-  line-height: 40px;
-  display: block;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.0352941176);
+  padding: 10px 60px;
+  border-radius: 50px;
   font-size: 1.125rem;
+  box-shadow: inset 5px 5px 15px rgb(0, 0, 0);
+  transition: box-shadow 800ms, filter 800ms, color 800ms;
 }
 body #home .hero_text_wrapper .hero_text_content .social_links a:hover {
+  box-shadow: inset 5px 5px 15px rgba(255, 255, 255, 0.25);
+  filter: drop-shadow(1px 1px 5px rgba(214, 177, 30, 0.15));
   color: #f1c50e;
 }
 body #home .hero_img {
   flex: 1;
 }
 body #home .hero_img path {
-  opacity: 0.5;
+  opacity: 0.6;
+}
+body #home .hero_img path:nth-child(odd) {
+  stroke: #353535;
+}
+body #home .hero_img path:nth-child(even) {
+  stroke: #f1c40e;
 }
 body #home .hero_img path:hover {
   cursor: pointer;
