@@ -70,3 +70,31 @@ window.addEventListener("scroll", () => {
   }
   lastScrollTop = st <= 0 ? 0 : st;
 });
+
+//music waves
+function padWithZero(num) {
+  return String(num).padStart(2, "0");
+}
+function audioSRCadjustment(keyNum) {
+  let audionSrc;
+  if (keyNum <= 9) {
+    audionSrc = `./music/key${padWithZero(keyNum)}.mp3`;
+  } else if (keyNum > 24 && keyNum < 34) {
+    audionSrc = `./music/key${padWithZero(keyNum - 24)}.mp3`;
+  } else if (keyNum >= 34) {
+    audionSrc = `./music/key${keyNum - 24}.mp3`;
+  } else {
+    audionSrc = `./music/key${keyNum}.mp3`;
+  }
+  return audionSrc;
+}
+let keys = document.querySelectorAll(`.key`);
+let key_audio = document.getElementById(`key_audio`);
+keys.forEach((key) => {
+  key.addEventListener("click", () => {
+    let data_key_attr = key.getAttribute("data-key");
+    key_audio.src = audioSRCadjustment(data_key_attr);
+    key_audio.play();
+    key_audio.currentTime = 0;
+  });
+});
