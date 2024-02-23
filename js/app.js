@@ -1,4 +1,4 @@
-// Side menu
+//#region  Side menu
 let burger_menu = document.querySelector(".burger_menu");
 let side_menu_close = document.querySelector(".side_menu_close");
 let side_menu_items = document.querySelectorAll(".side_menu_item");
@@ -17,61 +17,50 @@ side_menu_items.forEach((item) => {
 });
 side_menu_close.addEventListener("click", closeSideBar);
 modal.addEventListener("click", closeSideBar);
+//#endregion
 
-// Scroll menu
-let test = 0;
-let test1 = 0;
-let test2 = 0;
-let test3 = 0;
-let test4 = 0;
-let lastScrollTop = 0;
+//#region  on scroll menu
+let on_scroll_header = document.querySelector(".on_scroll_header");
+let on_scroll_header_elements = document.querySelectorAll(
+  ".on_scroll_header_element"
+);
+let _side_menu_item_rotation_angles = [0, 0, 0, 0, 0];
+let _lastScrollTop = 0;
+let _rotationSpeed = 5;
 window.addEventListener("scroll", () => {
   let st = document.documentElement.scrollTop;
   if (st > 100) {
-    document.querySelector(".on_scroll_header").style.display = "grid";
+    on_scroll_header.style.display = "grid";
   }
   if (st === 0) {
-    document.querySelector(".on_scroll_header").style.display = "none";
+    on_scroll_header.style.display = "none";
   }
-  if (st > lastScrollTop) {
+  if (st > _lastScrollTop) {
     // downscroll
-    document.querySelector(
-      ".on_scroll_header"
-    ).style.transform = `rotate(${(test += 5)}deg)`;
-    document.querySelectorAll(
-      ".on_scroll_header_element"
-    )[0].style.transform = `rotate(${(test1 -= 5)}deg)`;
-    document.querySelectorAll(
-      ".on_scroll_header_element"
-    )[1].style.transform = `rotate(${(test2 -= 5)}deg)`;
-    document.querySelectorAll(
-      ".on_scroll_header_element"
-    )[2].style.transform = `rotate(${(test3 -= 5)}deg)`;
-    document.querySelectorAll(
-      ".on_scroll_header_element"
-    )[3].style.transform = `rotate(${(test4 -= 5)}deg)`;
-  } else if (st < lastScrollTop) {
+    on_scroll_header.style.transform = `rotate(${(_side_menu_item_rotation_angles[0] +=
+      _rotationSpeed)}deg)`;
+    on_scroll_header_elements.forEach(
+      (menu_item, index) =>
+        (menu_item.style.transform = `rotate(${(_side_menu_item_rotation_angles[
+          index + 1
+        ] -= _rotationSpeed)}deg)`)
+    );
+  } else if (st < _lastScrollTop) {
     // upscroll
-    document.querySelector(
-      ".on_scroll_header"
-    ).style.transform = `rotate(${(test -= 5)}deg)`;
-    document.querySelectorAll(
-      ".on_scroll_header_element"
-    )[0].style.transform = `rotate(${(test1 += 5)}deg)`;
-    document.querySelectorAll(
-      ".on_scroll_header_element"
-    )[1].style.transform = `rotate(${(test2 += 5)}deg)`;
-    document.querySelectorAll(
-      ".on_scroll_header_element"
-    )[2].style.transform = `rotate(${(test3 += 5)}deg)`;
-    document.querySelectorAll(
-      ".on_scroll_header_element"
-    )[3].style.transform = `rotate(${(test4 += 5)}deg)`;
+    on_scroll_header.style.transform = `rotate(${(_side_menu_item_rotation_angles[0] -=
+      _rotationSpeed)}deg)`;
+    on_scroll_header_elements.forEach(
+      (menu_item, index) =>
+        (menu_item.style.transform = `rotate(${(_side_menu_item_rotation_angles[
+          index + 1
+        ] += _rotationSpeed)}deg)`)
+    );
   }
-  lastScrollTop = st <= 0 ? 0 : st;
+  (_lastScrollTop = st) <= 0 ? 0 : st;
 });
+//#endregion
 
-//music waves
+//#region  music waves
 function padWithZero(num) {
   return String(num).padStart(2, "0");
 }
@@ -98,3 +87,4 @@ keys.forEach((key) => {
     key_audio.currentTime = 0;
   });
 });
+//#endregion
