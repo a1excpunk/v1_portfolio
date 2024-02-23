@@ -45,6 +45,7 @@ body li {
 body header {
   margin: auto;
   width: 100%;
+  padding-top: 50px;
 }
 body header .header_content {
   max-width: 1440px;
@@ -52,27 +53,30 @@ body header .header_content {
   justify-content: space-between;
   margin: auto;
   padding: 30px 50px;
+  box-shadow: inset 4px 4px 10px rgba(255, 255, 255, 0.1), inset -4px -4px 15px rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  background: linear-gradient(45deg, var(--gradient-black-1), var(--gradient-black-2));
 }
 body header .top_menu_wrapper ul {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 30px;
 }
 body header .top_menu_wrapper ul li {
   border-bottom: 1px solid transparent;
   position: relative;
-  padding: 5px 10px;
+  padding: 5px 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  transition: box-shadow 500ms, filter 500ms, color 500ms;
 }
 body header .top_menu_wrapper ul li::first-letter {
   color: #f1c50e;
 }
-body header .top_menu_wrapper ul li:hover::after {
-  animation: fillBG 400ms forwards ease;
-}
-body header .top_menu_wrapper ul li:hover::before {
-  box-shadow: 3px 0px 5px rgb(255, 255, 255);
-  transition: all 400ms ease;
-  left: calc(100% - 5px);
+body header .top_menu_wrapper ul li:hover {
+  box-shadow: inset 5px 5px 15px rgb(0, 0, 0), inset -5px -5px 15px rgba(255, 255, 255, 0.1);
+  filter: drop-shadow(1px 1px 5px rgba(214, 177, 30, 0.1));
+  color: #f1c50e;
 }
 body header .top_menu_wrapper ul li::after {
   content: "";
@@ -109,6 +113,7 @@ body header .burger_menu {
     opacity: 1;
     z-index: 3;
     background-color: black;
+    margin-top: 0;
   }
   body header .burger_menu {
     display: block;
@@ -454,9 +459,4 @@ body .modal {
   top: 0;
   z-index: 2;
   display: none;
-}
-@keyframes fillBG {
-  100% {
-    width: 100%;
-  }
 }/*# sourceMappingURL=style.css.map */
