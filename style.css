@@ -131,7 +131,7 @@ body .on_scroll_header {
   position: fixed;
   margin-top: 50svh;
   right: 30px;
-  display: grid;
+  display: none;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 10px;
