@@ -147,6 +147,9 @@ body .on_scroll_header a {
   cursor: pointer;
   color: #f1c40e;
 }
+body .on_scroll_header a:hover:nth-child(1) {
+  z-index: 2;
+}
 body .on_scroll_header a:hover:nth-child(1)::after {
   width: -moz-max-content;
   width: max-content;
@@ -169,6 +172,9 @@ body .on_scroll_header a:hover:nth-child(1)::before {
   right: calc(50% - 5px);
   border: 5px solid transparent;
   border-top: 5px solid #f1c40e;
+}
+body .on_scroll_header a:hover:nth-child(2) {
+  z-index: 2;
 }
 body .on_scroll_header a:hover:nth-child(2)::after {
   width: -moz-max-content;
@@ -193,6 +199,9 @@ body .on_scroll_header a:hover:nth-child(2)::before {
   border: 5px solid transparent;
   border-top: 5px solid #f1c40e;
 }
+body .on_scroll_header a:hover:nth-child(3) {
+  z-index: 2;
+}
 body .on_scroll_header a:hover:nth-child(3)::after {
   width: -moz-max-content;
   width: max-content;
@@ -215,6 +224,9 @@ body .on_scroll_header a:hover:nth-child(3)::before {
   right: calc(50% - 5px);
   border: 5px solid transparent;
   border-top: 5px solid #f1c40e;
+}
+body .on_scroll_header a:hover:nth-child(4) {
+  z-index: 2;
 }
 body .on_scroll_header a:hover:nth-child(4)::after {
   width: -moz-max-content;
