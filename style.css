@@ -293,20 +293,20 @@ body #home {
   margin-top: 50px;
 }
 body #home .hero_wrapper {
-  box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.1), -4px -4px 15px rgba(0, 0, 0, 0.7);
   position: absolute;
   display: flex;
   width: 100%;
   height: 100%;
   z-index: -1;
+  box-shadow: inset -4px 4px 15px rgba(255, 255, 255, 0.1), inset 4px -4px 15px rgb(0, 0, 0);
   border-radius: 15px;
   background: linear-gradient(45deg, var(--gradient-black-1), var(--gradient-black-2));
   transition: --gradient-black-1 700ms, --gradient-black-2 1000ms, box-shadow 1300ms;
 }
 body #home:hover .hero_wrapper {
-  box-shadow: 4px -4px 15px rgba(0, 0, 0, 0.7), -4px 4px 10px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 4px 4px 15px rgba(255, 255, 255, 0.1), inset -4px -4px 15px rgb(0, 0, 0);
   --gradient-black-1: rgb(30, 30, 30);
-  --gradient-black-2: rgb(0, 0, 0);
+  --gradient-black-2: rgb(5, 5, 5);
 }
 body #home .hero_text_wrapper {
   flex: 1;
@@ -343,12 +343,11 @@ body #home .hero_text_wrapper .hero_text_content .social_links a {
   padding: 10px 60px;
   border-radius: 50px;
   font-size: 1.125rem;
-  box-shadow: inset 5px 5px 15px rgb(0, 0, 0);
-  transition: box-shadow 800ms, filter 800ms, color 800ms;
+  transition: box-shadow 500ms, filter 500ms, color 500ms;
 }
 body #home .hero_text_wrapper .hero_text_content .social_links a:hover {
-  box-shadow: inset 5px 5px 15px rgba(255, 255, 255, 0.25);
-  filter: drop-shadow(1px 1px 5px rgba(214, 177, 30, 0.15));
+  box-shadow: inset 5px 5px 15px rgb(0, 0, 0), inset -5px -5px 15px rgba(255, 255, 255, 0.1);
+  filter: drop-shadow(1px 1px 5px rgba(214, 177, 30, 0.1));
   color: #f1c50e;
 }
 body #home .hero_img {
@@ -373,7 +372,9 @@ body #home .hero_img path:active {
 }
 @media (max-width: 700px) {
   body #home {
-    margin-top: 80px;
+    box-shadow: none;
+    margin-top: 0;
+    padding-top: 70px;
     background-color: #111111;
     flex-direction: column;
   }
