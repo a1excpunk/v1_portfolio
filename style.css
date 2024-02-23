@@ -136,12 +136,14 @@ body header .burger_menu {
 body .on_scroll_header {
   position: fixed;
   margin-top: 50svh;
+  bottom: 50px;
   right: 30px;
   display: none;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 10px;
   transform: rotate(45deg);
+  z-index: 4;
 }
 body .on_scroll_header a {
   transform: rotate(-45deg);
@@ -152,6 +154,8 @@ body .on_scroll_header a {
   background-color: #000000;
   cursor: pointer;
   color: #f1c40e;
+  background: linear-gradient(45deg, var(--gradient-black-1), var(--gradient-black-2));
+  box-shadow: inset 4px 4px 10px rgba(255, 255, 255, 0.1), inset -4px -4px 15px rgba(0, 0, 0, 0.7), 4px 4px 10px rgba(255, 255, 255, 0.02), -4px -4px 10px rgba(0, 0, 0, 0.7);
 }
 body .on_scroll_header a:hover:nth-child(1) {
   z-index: 2;
@@ -167,13 +171,14 @@ body .on_scroll_header a:hover:nth-child(1)::after {
   font-size: 12px;
   border-radius: 5px;
   right: 0;
+  box-shadow: inset 4px 4px 10px rgb(255, 227, 114), inset -4px -4px 15px rgb(73, 59, 0);
 }
 body .on_scroll_header a:hover:nth-child(1)::before {
   content: "";
   position: absolute;
   width: 0px;
   height: 0px;
-  top: -5px;
+  top: -6px;
   border-radius: 0px;
   right: calc(50% - 5px);
   border: 5px solid transparent;
@@ -193,13 +198,14 @@ body .on_scroll_header a:hover:nth-child(2)::after {
   font-size: 12px;
   border-radius: 5px;
   right: 0;
+  box-shadow: inset 4px 4px 10px rgb(255, 227, 114), inset -4px -4px 15px rgb(73, 59, 0);
 }
 body .on_scroll_header a:hover:nth-child(2)::before {
   content: "";
   position: absolute;
   width: 0px;
   height: 0px;
-  top: -5px;
+  top: -6px;
   border-radius: 0px;
   right: calc(50% - 5px);
   border: 5px solid transparent;
@@ -219,13 +225,14 @@ body .on_scroll_header a:hover:nth-child(3)::after {
   font-size: 12px;
   border-radius: 5px;
   right: 0;
+  box-shadow: inset 4px 4px 10px rgb(255, 227, 114), inset -4px -4px 15px rgb(73, 59, 0);
 }
 body .on_scroll_header a:hover:nth-child(3)::before {
   content: "";
   position: absolute;
   width: 0px;
   height: 0px;
-  top: -5px;
+  top: -6px;
   border-radius: 0px;
   right: calc(50% - 5px);
   border: 5px solid transparent;
@@ -245,13 +252,14 @@ body .on_scroll_header a:hover:nth-child(4)::after {
   font-size: 12px;
   border-radius: 5px;
   right: 0;
+  box-shadow: inset 4px 4px 10px rgb(255, 227, 114), inset -4px -4px 15px rgb(73, 59, 0);
 }
 body .on_scroll_header a:hover:nth-child(4)::before {
   content: "";
   position: absolute;
   width: 0px;
   height: 0px;
-  top: -5px;
+  top: -6px;
   border-radius: 0px;
   right: calc(50% - 5px);
   border: 5px solid transparent;
