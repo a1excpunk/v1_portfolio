@@ -369,13 +369,30 @@ body #home .hero_img path:active {
 }
 body .lorem_ipsum_wrapper {
   overflow-x: hidden;
-  padding: 15px 20px;
+  position: relative;
+  height: 130px;
+  padding: 0 20px;
   background-color: black;
+  box-shadow: inset 4px 4px 10px rgba(255, 255, 255, 0.1), inset -4px -4px 10px rgb(0, 0, 0);
+  background: linear-gradient(45deg, var(--gradient-black-1), var(--gradient-black-2));
 }
-body .lorem_ipsum_wrapper p {
+body .lorem_ipsum_wrapper .lorem_ipsum_text {
+  color: rgb(0, 0, 0);
   width: -moz-max-content;
   width: max-content;
   font-size: 5rem;
+  position: absolute;
+  left: 20px;
+  right: 0;
+}
+body .lorem_ipsum_wrapper .animate_lorem_ipsum {
+  left: 100%;
+  animation: runningText 100s infinite;
+}
+@keyframes runningText {
+  100% {
+    left: -440%;
+  }
 }
 body .side_menu_wrapper {
   background-color: #000000;

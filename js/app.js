@@ -88,3 +88,16 @@ keys.forEach((key) => {
   });
 });
 //#endregion
+
+//#region lorem ipsum running text
+
+let lorem_ipsum_text = document.querySelector(".lorem_ipsum_text");
+let lorem_ipsum_wrapper = document.querySelector(".lorem_ipsum_wrapper");
+window.addEventListener("DOMContentLoaded", () => {
+  lorem_ipsum_text.classList.add("animate_lorem_ipsum");
+});
+lorem_ipsum_wrapper.addEventListener("click", () => {
+  lorem_ipsum_text.classList.toggle("animate_lorem_ipsum");
+});
+
+//#endregion
