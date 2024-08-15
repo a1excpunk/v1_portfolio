@@ -382,6 +382,7 @@ body #home .hero_img path:active {
     display: none;
   }
 }
+// deleted lorem impum class
 body .lorem_ipsum_wrapper {
   overflow-x: hidden;
   position: relative;
